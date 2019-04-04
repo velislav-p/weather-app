@@ -12,5 +12,5 @@ A simple weather app that fetches data based on a user's location and displays m
 ### Running the tests
 
 ```
-> npm test
+> npm run test
 ```
