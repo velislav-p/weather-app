@@ -7,6 +7,7 @@ import Header from 'components/Header';
 
 let wrapped;
 
+
 beforeEach(() => {
     wrapped = shallow(<App />);
 });
