@@ -13,7 +13,6 @@ beforeEach(() => {
     wrapped = shallow(<App />);
 });
 
-
 describe('Render',()=>{
 
     it('Renders `Header` element correctly',()=>{
