@@ -10,10 +10,10 @@ import reducers from "./reducers";
  * @param props - the children elements
  * @returns {*}
  */
-export default props => {
+export default ({children, initialState = {}}) => {
     return(
-        <Provider store={createStore(reducers, {})}>
-            {props.children}
+        <Provider store={createStore(reducers, initialState)}>
+            {children}
         </Provider>
     )
 }
