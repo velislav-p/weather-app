@@ -11,7 +11,7 @@ beforeEach(()=>{
     wrapped = shallow(<Header/>);
 });
 
-it('Renders an image, a location element and a temperature element',()=>{
+it('Renders an image, a location container and a temperature container',()=>{
     const imageContainer = findByTestAttr(wrapped,'header-image-container');
     const locationContainer = findByTestAttr(wrapped,'header-location-container');
     const temperatureContainer = findByTestAttr(wrapped,'header-temperature-container');
