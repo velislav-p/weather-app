@@ -14,8 +14,13 @@ const findElementByTestAttr = (wrapped, value) => {
 };
 
 
+let wrapped;
+
+beforeEach(()=>{
+    wrapped = shallow(<Header/>);
+});
+
 it('Renders an image, a location element and a temperature element',()=>{
-    const wrapped = shallow(<Header/>);
     const imageComponent = findElementByTestAttr(wrapped,'header-image-container');
     const locationComponent = findElementByTestAttr(wrapped,'header-location-container');
     const temperatureComponent = findElementByTestAttr(wrapped,'header-temperature-container');
@@ -23,11 +28,9 @@ it('Renders an image, a location element and a temperature element',()=>{
     expect(imageComponent.length).toBe(1);
     expect(locationComponent.length).toBe(1);
     expect(temperatureComponent.length).toBe(1);
-
-
 });
 
-//Test that the location changes correctly
+//Test that the location is being displayed based on the user's current position
 
 //Test that the icon changes according to state
 
