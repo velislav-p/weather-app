@@ -1,21 +1,31 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchData} from 'actions';
 
 import Header from 'components/Header';
 import Main from 'components/Main';
+import Loader from "components/Loader";
 
-class App extends Component {
 
+const App = ({weatherData}) => {
 
-    render() {
-
-        return(
-            <div>
-                <Header/>
-                <Main/>
-            </div>
-        )
+    let loadingMessage = "For accurate weather forecast, we need access to your location";
+    if(!weatherData) {
+        return (
+            <Loader message={loadingMessage}/>
+        );
     }
+    return (
+        <div>
+            <Header/>
+            <Main/>
+        </div>
+    )
+};
 
-}
+const mapStateToProps = (state) => {
+    return {weatherData : state.weatherData}
+};
 
-export default App;
+
+export default connect(mapStateToProps,{fetchData})(App)
