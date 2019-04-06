@@ -52,4 +52,32 @@ describe('Render',()=>{
     })
 });
 
+describe("Call action",()=>{
+    const fetchDataMock = jest.fn();
+    const throwErrorMock = jest.fn();
+    const initialState = {
+        weatherData : {
+            fetchData : fetchDataMock,
+            throwError : throwErrorMock
+        }
+    };
 
+    describe('User accepts to share location',()=>{
+        global.navigator.geolocation = {
+            getCurrentPosition  : jest.fn()
+                .mockImplementationOnce(
+                    (success)=>Promise.resolve(success({
+                        coords: {
+                            latitude: 12,
+                            longitude: 10
+                        }
+                    })))
+        };
+        wrapped = setup(initialState);
+
+        it("Calls the fetchData action creator when component is mounted",()=>{
+            const getFetchDataMockCount = fetchDataMock.mock.calls.length;
+            expect(getFetchDataMockCount).toBe(1);
+        })
+    });
+});

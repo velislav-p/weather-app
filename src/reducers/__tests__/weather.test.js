@@ -1,9 +1,9 @@
 import weatherReducer from 'reducers/weather';
-import { FETCH_DATA} from "../../actions/types";
+import {actionTypes} from "../../actions/types";
 
-it('Handles actions of type `SAVE_COMMENT`',()=>{
+it('Handles actions of type `FETCH_DATA`',()=>{
     const action = {
-        type : FETCH_DATA,
+        type : actionTypes.FETCH_DATA,
         payload : {lat:200, long:300}
     };
 
