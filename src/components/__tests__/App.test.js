@@ -1,11 +1,12 @@
 import React from 'react';
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 
 import App,{RawApp} from 'components/App';
 import Main from 'components/Main';
 import Header from 'components/Header';
 import Loader from 'components/Loader';
 import Root from 'Root';
+import {APIresponseObject} from "testUtils";
 
 let wrapped;
 
@@ -20,13 +21,7 @@ afterEach = () => {
 describe('Render',()=>{
 
     describe('Render content with data from state',()=>{
-        const initialState = {
-            weatherData: {
-                name: 'Odense',
-                main :{temp: 23},
-                weather: [{main : 'Clouds'}]
-            }
-        };
+        const initialState = APIresponseObject;
         it('Renders `Header` element correctly',()=>{
             wrapped = setup(initialState);
             expect(wrapped.find(Header).length).toBe(1);

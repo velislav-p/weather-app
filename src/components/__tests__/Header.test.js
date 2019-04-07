@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme'
 
-import {findByTestAttr} from 'testUtils';
+import {findByTestAttr, APIresponseObject} from 'testUtils';
 import Root from 'Root';
 import Header from 'components/Header';
 
@@ -15,13 +15,7 @@ afterEach = () => {
     wrapped.unmount();
 };
 
-const initialState = {
-    weatherData: {
-        name: 'Odense',
-        main :{temp: 23},
-        weather: [{main : 'Clouds'}]
-    }
-};
+const initialState = APIresponseObject;
 
 describe('Render',()=>{
     it('Renders an image, a location container and a temperature container',()=>{
