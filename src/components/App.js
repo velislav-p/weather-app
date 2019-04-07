@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchData, throwError} from 'actions';
@@ -42,8 +43,7 @@ export class RawApp extends Component {
 
         )
     }
-
-};
+}
 
 const mapStateToProps = (state) => {
     return {weatherData : state.weatherData}
@@ -51,3 +51,9 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps,{fetchData, throwError})(RawApp)
+
+RawApp.propTypes = {
+  fetchData: PropTypes.func.isRequired,
+  throwError: PropTypes.func,
+  weatherData: PropTypes.object
+};

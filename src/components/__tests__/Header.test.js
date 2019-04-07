@@ -15,10 +15,17 @@ afterEach = () => {
     wrapped.unmount();
 };
 
+const initialState = {
+    weatherData: {
+        name: 'Odense',
+        main :{temp: '23'},
+        weather: [{main : 'Clouds'}]
+    }
+};
+
 describe('Render',()=>{
     it('Renders an image, a location container and a temperature container',()=>{
-
-        wrapped = setup();
+        wrapped = setup(initialState);
         const imageContainer = findByTestAttr(wrapped,'header-image-container');
         const locationContainer = findByTestAttr(wrapped,'header-location-container');
         const temperatureContainer = findByTestAttr(wrapped,'header-temperature-container');
@@ -30,16 +37,7 @@ describe('Render',()=>{
     });
 
     it('Renders Header with props mapped from state',()=>{
-        const initialState = {
-            weatherData: {
-                location: 'Odense',
-                temperature: '23',
-                forecast: 'cloudy'
-            }
-        };
         wrapped = setup(initialState);
         expect(wrapped.props().initialState).toEqual(initialState);
-
     });
-
 });

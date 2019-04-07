@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react';
 
 const Loader = (props) => {
@@ -11,3 +12,7 @@ const Loader = (props) => {
 };
 
 export default Loader;
+
+Loader.propTypes = {
+  message: PropTypes.string.isRequired
+};

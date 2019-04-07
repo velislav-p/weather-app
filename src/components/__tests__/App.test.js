@@ -19,12 +19,12 @@ afterEach = () => {
 };
 describe('Render',()=>{
 
-    describe('With data from API',()=>{
+    describe('Render content with data from state',()=>{
         const initialState = {
             weatherData: {
-                location: 'Odense',
-                temperature: '23',
-                forecast: 'cloudy'
+                name: 'Odense',
+                main :{temp: '23'},
+                weather: [{main : 'Clouds'}]
             }
         };
         it('Renders `Header` element correctly',()=>{
@@ -38,7 +38,7 @@ describe('Render',()=>{
         });
     });
 
-    describe('Before data from API',()=>{
+    describe('Render elements before data from state',()=>{
         it('Renders a Loader component',()=>{
             wrapped = setup({});
             expect(wrapped.find(Loader).length).toBe(1);
