@@ -22,5 +22,9 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(Main);
 
 Main.propTypes = {
-  weatherData: PropTypes.object.isRequired
+    weatherData: PropTypes.shape({
+        main: PropTypes.shape({
+            temp: PropTypes.number.isRequired
+        }),
+    })
 };

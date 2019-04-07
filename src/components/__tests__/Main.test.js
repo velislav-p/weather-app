@@ -10,7 +10,7 @@ describe('Render',()=>{
       const initialState = {
          weatherData: {
             name: 'Odense',
-            main :{temp: '23'},
+            main :{temp: 23},
             weather: [{main : 'Clouds'}]
          }
       };

@@ -18,7 +18,7 @@ afterEach = () => {
 const initialState = {
     weatherData: {
         name: 'Odense',
-        main :{temp: '23'},
+        main :{temp: 23},
         weather: [{main : 'Clouds'}]
     }
 };
@@ -41,3 +41,5 @@ describe('Render',()=>{
         expect(wrapped.props().initialState).toEqual(initialState);
     });
 });
+
+

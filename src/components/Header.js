@@ -58,5 +58,11 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps)(Header);
 
 Header.propTypes = {
-  weatherData: PropTypes.object.isRequired
+  weatherData: PropTypes.shape({
+      name : PropTypes.string.isRequired,
+      main : PropTypes.shape({
+          temp : PropTypes.number.isRequired
+      }),
+      weather : PropTypes.array.isRequired
+  }),
 };
