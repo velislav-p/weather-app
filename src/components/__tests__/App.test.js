@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount, shallow} from 'enzyme';
 
-import App from 'components/App';
+import App,{RawApp} from 'components/App';
 import Main from 'components/Main';
 import Header from 'components/Header';
 import Loader from 'components/Loader';
@@ -54,14 +54,9 @@ describe('Render',()=>{
 
 describe("Call action",()=>{
     const fetchDataMock = jest.fn();
-    const throwErrorMock = jest.fn();
-    const initialState = {
-        weatherData : {
-            fetchData : fetchDataMock,
-            throwError : throwErrorMock
-        }
+    const props = {
+        fetchData : fetchDataMock
     };
-
     describe('User accepts to share location',()=>{
         global.navigator.geolocation = {
             getCurrentPosition  : jest.fn()
@@ -73,11 +68,11 @@ describe("Call action",()=>{
                         }
                     })))
         };
-        wrapped = setup(initialState);
+        wrapped = mount(<RawApp {...props}/>);
 
         it("Calls the fetchData action creator when component is mounted",()=>{
             const getFetchDataMockCount = fetchDataMock.mock.calls.length;
             expect(getFetchDataMockCount).toBe(1);
-        })
+        });
     });
 });

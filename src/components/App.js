@@ -7,19 +7,18 @@ import Main from 'components/Main';
 import Loader from "components/Loader";
 
 
-class App extends Component {
+export class RawApp extends Component {
 
     componentDidMount() {
+
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
                 const lon = position.coords.longitude;
                 const lat = position.coords.latitude;
-                this.props.weatherData.fetchData(lon,lat);
-                console.log(this.props);
+                this.props.fetchData(lat,lon);
             },
             (err) => {
                 this.props.throwError(err.message);
-
             }
         );
     }
@@ -51,4 +50,4 @@ const mapStateToProps = (state) => {
 };
 
 
-export default connect(mapStateToProps,{fetchData, throwError})(App)
+export default connect(mapStateToProps,{fetchData, throwError})(RawApp)
