@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react';
 
+import "components/Loader.scss";
+
 const Loader = (props) => {
     return (
 
-        <div className="">
+        <div className="loader-wrapper">
             <div className="loader">{props.message}</div>
         </div>
 

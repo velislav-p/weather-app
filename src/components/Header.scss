@@ -1,0 +1,33 @@
+@import "Common.scss";
+
+.header-wrapper{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  padding:20px 50px 50px 50px;
+  &.day{
+    background-color: $color_header_light;
+    color: $color_font_black;
+  }
+  &.night{
+    background-color: $color_header_dark;
+    color: $color_font_white;
+  }
+  .location-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    font-size: $font_size_default;
+    font-weight:700;
+    margin-bottom:50px;
+  }
+  .weather-display-wrapper{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    .temperature-container{
+      font-size: 40px;
+    }
+  }
+}

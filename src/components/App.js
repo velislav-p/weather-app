@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchData, throwError} from 'actions';
+import "components/App.scss";
 
 import Header from 'components/Header';
 import Main from 'components/Main';
@@ -25,21 +26,24 @@ export class RawApp extends Component {
     }
 
     render(){
+
         let message = "For accurate weather forecast, we need access to your location";
 
         if(this.props.weatherData && !this.props.weatherData.errorMessage) {
             return (
-                <div>
+                <div className="app-wrapper">
                     <Header/>
                     <Main/>
                 </div>
             );
         }
         else if(this.props.weatherData && this.props.weatherData.errorMessage){
-            message = this.props.weatherData.errorMessage
+            message = this.props.weatherData.errorMessage +" :("
         }
         return (
-            <Loader message={message}/>
+            <div className="app-wrapper">
+                <Loader message={message}/>
+            </div>
 
         )
     }

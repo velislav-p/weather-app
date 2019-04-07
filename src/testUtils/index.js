@@ -7,3 +7,17 @@
 export const findByTestAttr = (wrapped, value) => {
     return wrapped.find(`[data-test="${value}"]`);
 };
+
+
+export const APIresponseObject = {
+    weatherData: {
+        name: 'Odense',
+        main :{temp: 23},
+        weather: [{main : 'Clouds'}],
+        sys : {
+            sunrise : 1554656581,
+            sunset : 1554656581
+        }
+
+    }
+};

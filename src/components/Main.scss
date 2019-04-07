@@ -1,0 +1,35 @@
+@import "Common.scss";
+
+.main-content-wrapper{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  padding:50px;
+  &.day{
+    background-color: $color_main_light;
+    color: $color_font_black;
+  }
+  &.night{
+    background-color: $color_main_dark;
+    color: $color_font_white;
+  }
+  .main-day-container{
+    font-size: $font_size_default;
+    font-weight: 700;
+    margin-bottom:50px;
+  }
+  .main-message-wrapper{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    font-size:$font_size_xl;
+    font-weight:800;
+    div{
+      height:min-content;
+      width:max-content;
+    }
+  }
+}
+
