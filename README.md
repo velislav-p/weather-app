@@ -14,10 +14,19 @@ The app will run on http://localhost:3000
 > git clone https://github.com/velislav-p/weather-app.git
 > cd weather-app
 > npm install
-> npm start
 ```
+#### To run the app in dev mode
+The app requires a secure connection. For testing purposes run
 
-If you get an error about the node-sass module, run this command:
+#####Linux, macOS (Bash)
+```
+> HTTPS=true npm start
+```
+**For other operating systems, check out the official docs:
+https://facebook.github.io/create-react-app/docs/using-https-in-development**
+
+####In case of errors
+If you get an error about the node-sass module after running `npm start`, run this command:
 
 ```$xslt
 > npm rebuild node-sass
