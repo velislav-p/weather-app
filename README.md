@@ -18,14 +18,15 @@ The app will run on http://localhost:3000
 #### To run the app in dev mode
 The app requires a secure connection. For testing purposes run
 
-#####Linux, macOS (Bash)
+**Linux, macOS (Bash)**
 ```
 > HTTPS=true npm start
 ```
 **For other operating systems, check out the official docs:
 https://facebook.github.io/create-react-app/docs/using-https-in-development**
 
-####In case of errors
+**In case of errors**
+
 If you get an error about the node-sass module after running `npm start`, run this command:
 
 ```$xslt
