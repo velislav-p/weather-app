@@ -1,16 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react';
 import {connect} from 'react-redux';
-import {getTimeOfDay} from "helpers/helperFunctions";
+import {getTimeOfDay, kelvinToCelsius} from "helpers/helperFunctions";
 
 import "components/Main.scss";
 
 const Main = ({weatherData}) => {
-
-    //The temperature coming from the API is in Kelvins
-    const kelvinToCelsius = (kelvin) => {
-        return (Math.trunc(kelvin - 273.15));
-    };
 
     const temp = kelvinToCelsius(weatherData.main.temp);
     let funnyMessage;

@@ -10,7 +10,12 @@ import Loader from "components/Loader";
 
 
 export class RawApp extends Component {
-
+    /**
+     * When the component mounts:
+     * call the fetchData action creator with the user's location, if they share it
+     * or
+     * call the throwError action creator if the user denies sharing location
+     */
     componentDidMount() {
 
         window.navigator.geolocation.getCurrentPosition(

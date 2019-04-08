@@ -10,7 +10,9 @@ import {APIresponseObject} from "testUtils";
 
 let wrapped;
 
-
+/**
+Mounting the App component with the required Provider component and store
+ */
 const setup = (initialState) => {
     return mount(<Root initialState={initialState}><App/></Root>);
 };
@@ -53,6 +55,11 @@ describe("Call action",()=>{
         fetchData : fetchDataMock
     };
     describe('User accepts to share location',()=>{
+
+        /**
+        Assigning the getCurrentPosition() to a jest mock function, so that
+        we can directly see if it has been called when the component mounts
+         */
         global.navigator.geolocation = {
             getCurrentPosition  : jest.fn()
                 .mockImplementationOnce(

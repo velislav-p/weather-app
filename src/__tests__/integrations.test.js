@@ -22,7 +22,7 @@ describe('fetchData action creator and reducer',()=>{
 
     it('Updates the `weatherData` state with data from the API response',()=>{
         const store = createStore(reducers, {}, applyMiddleware(thunk));
-        const wrapped = mount(<Root><App/></Root>);
+        mount(<Root><App/></Root>);
 
         moxios.wait(()=>{
             const request = moxios.requests.mostRecent();
