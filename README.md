@@ -16,7 +16,7 @@ The app will run on http://localhost:3000
 > npm install
 ```
 #### To run the app in dev mode
-The app requires a secure connection. For testing purposes run
+The app requires location services to be enabled and a secure connection. For testing purposes run
 
 **Linux, macOS (Bash)**
 ```
